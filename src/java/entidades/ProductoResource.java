@@ -9,6 +9,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 
 
 /**
@@ -17,13 +18,14 @@ import javax.ws.rs.Produces;
  */
 @Stateless
 @Path("/productos")
-public class Producto {
+public class ProductoResource {
     @GET
     public String getProductos(){
         return "asd";
     }
     @GET
-    public String getProducto(@PathParam("id")String id){
-        return null;
+    @Path("{id}")
+    public Response getProducto(@PathParam("id")String id){
+        return Response.status(200).entity("Producto "+id).build();
     }
 }
