@@ -18,17 +18,18 @@ import javax.ws.rs.Path;
 @Path("/productos")
 public class productos {
     ArrayList<producto> productos = new ArrayList<producto>();
-    int secuencia =1;
+    int secuencia = 1;
     
     @GET
     public String listarProductos() {
         if (this.productos.isEmpty()) {
-            return "No existen productos registrados";
+            return "{}";
         } else {
             Gson objetogson = new Gson();
-            return objetogson.toJson(productos);
+            return objetogson.toJson(productos.toArray());
         }
     }
+    
     
 }
 

@@ -36,7 +36,7 @@ public class ApplicationConfig extends Application {
      * given list with all resources defined in the project.
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(entidades.ProductoResource.class);
+        resources.add(entidades.productos.class);
     }
     
 }
